@@ -26,7 +26,7 @@
 }
 
 .search-card {
-  padding: 20px;
+  padding: 60px 40px;
 }
 
 .search-card h2 {
@@ -37,19 +37,40 @@
 .search-card input {
   width: 300px;
   height: 35px;
+  border: 4px double;
+  border-radius: 5px;
   font-size: 20px;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   margin-bottom: 5px;
 }
 
+/* how do you center the text in the serach box? */
 .search-card button {
   display: flex;
   flex-direction: column;
+  border-radius: 5px;
   font-family: "Josefin Sans", sans-serif;
-  font-weight: 300;
-  font-size: 20px;
   width: 300px;
   height: 30px;
+  font-size: 20px;
   align-items: center;
+  background-color: aliceblue;
+  border: 1px solid;
+}
+
+.search-card button:hover {
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 123, 255),
+    rgb(221, 0, 255)
+  );
+  color: white;
+  border: 2px dotted white;
+}
+
+.results-card {
+    display: flex;
+    flex-direction: column;
 }
