@@ -1,13 +1,16 @@
 :root {
-  background-color: azure;
-  border: none;
-  font-family: "Josefin Sans", sans-serif;
+  --light: azure;
+  --white: rgb(255, 255, 255);
+  --font: "Josefin Sans", sans-serif;
 }
 
 * {
   box-sizing: border-box;
+  border: none;
   padding: 0;
   margin: 0;
+  background-color: var(--light);
+  font-family: var(--font);
 }
 
 .heading {
@@ -27,9 +30,11 @@
 
 .search-card {
   padding: 60px 40px;
+  background-color: var(--light);
 }
 
 .search-card h2 {
+  font-weight: 500;
   font-size: 30px;
   padding-bottom: 10px;
 }
@@ -37,25 +42,26 @@
 .search-card input {
   width: 300px;
   height: 35px;
-  border: 4px double;
+  border: 1px solid;
   border-radius: 5px;
+  background-color: var(--white);
   font-size: 20px;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: var(--font);
   font-weight: 300;
   margin-bottom: 5px;
 }
 
-/* how do you center the text in the serach box? */
 .search-card button {
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: var(--font);
   width: 300px;
   height: 30px;
   font-size: 20px;
   align-items: center;
-  background-color: aliceblue;
+  justify-content: center;
+  background-color: var(--white);
   border: 1px solid;
 }
 
@@ -71,6 +77,6 @@
 }
 
 .results-card {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
