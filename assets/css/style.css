@@ -1,0 +1,38 @@
+:root {
+  background-color: azure;
+  font-family: "Josefin Sans", sans-serif;
+  border: none;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+  font-size: 60px;
+  text-align: center;
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 123, 255),
+    rgb(221, 0, 255)
+  );
+  color: white;
+  border: none;
+  padding: 20px;
+}
+
+.search-card {
+  padding: 20px;
+}
+
+.search-card h2 {
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+.search-card input {
+    width: 15px;
+}

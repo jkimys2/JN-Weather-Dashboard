@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JN Weather Dashboard</title>
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Weather Dashboard</h1>
+      <h1 class="heading">Weather Dashboard</h1>
     </header>
-    <form action="">
-        <h2>Search for a City:</h2>
-        <input type="text" placeholder="Enter a City">
-        <button>Search!</button>
+
+    <form class="search-card"> <!--can i just delete the action?-->
+      <h2>Search for a City:</h2>
+      <input id="input" type="text" placeholder="Enter a City" />
+      <button id="search-btn">Search!</button>
+      <section id="prev-search"></section>
     </form>
-    <section id="prev-search"></section>
-    <section id="current-search"></section>
-    <section id="five-day"></section>
-</body>
+
+    <main class="results-card">
+      <section id="current-search"></section>
+      <section id="five-day"></section>
+    </main>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
