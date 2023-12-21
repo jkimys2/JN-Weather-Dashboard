@@ -19,13 +19,13 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
-  
+
   <body class="row">
     <header>
       <h1 class="heading">Weather Dashboard</h1>
     </header>
-
-    <form class="col-12 col-md-5 search-card">
+<div class="row" style="border: 1px solid black">
+    <form class="col-12 col-md-6 col-lg-3 search-card">
       <!--can i just delete the action?-->
       <h2>Search for a City:</h2>
       <input id="city-input" type="text" placeholder="Enter a City" />
@@ -33,15 +33,18 @@
       <section id="prev-search"></section>
     </form>
 
-    <main class="col-12 col-md-7 results-card">
+    <main class="col-12 col-md-6 col-lg-8 results-card" style="border: 1px solid black">
       <section id="current-search">
         <h2 id="current-city"></h2>
+        <span id="icon"></span>
         <h3 id="current-weather"></h3>
       </section>
       <section id="five-day-card">
         <h2 id="five-day-text"></h2>
       </section>
     </main>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
