@@ -8,18 +8,16 @@ function handleSearchSumbit(event) {
 
   var cityInputVal = document.querySelector("#city-input").value;
 
-  if (!cityInputVal) {
-    console.error("You need to enter a city!");
-    return;
-  }
+  // call from localstorage and append to #prev-search
+
+  // API call for city & save to localstorage
+  var getWeatherUrl =
+    "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={cc11ae7480c164c7b800ffa97b091fd9}";
+
+  // API call for 5 day forcast
+  var getFiveDayUrl =
+    "api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={cc11ae7480c164c7b800ffa97b091fd9}";
 }
 
-// API call for city
-var getWeatherUrl =
-  "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={cc11ae7480c164c7b800ffa97b091fd9}";
-
-// API call for 5 day forcast
-var getFiveDayUrl =
-  "api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={cc11ae7480c164c7b800ffa97b091fd9}";
-  
 // click event for search button
+searchBtn.addEventListener("click", handleSearchSumbit)
