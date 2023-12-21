@@ -31,6 +31,7 @@
 .search-card {
   padding: 60px 40px;
   background-color: var(--light);
+  border-bottom: 1px solid gray;
 }
 
 .search-card h2 {
