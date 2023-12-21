@@ -1,8 +1,8 @@
-var searchBtn = document.querySelector("#search-btn");
-var searchCard = document.querySelector(".search-card");
-var resultsCard = document.querySelector(".results-card");
-var currentSearchCard = document.querySelector("#current-search");
-var fiveDayCard = document.querySelector("#five-day-card");
+var searchBtn = $("#search-btn");
+var searchCard = $(".search-card");
+var resultsCard = $(".results-card");
+var currentSearchCard = $("#current-search");
+var fiveDayCard = $("#five-day-card");
 
 // function for search button
 function handleSearch(event) {
@@ -21,16 +21,13 @@ function handleSearch(event) {
     fetch(getWeatherUrl).then(function (response) {
       if (response.ok) {
         response.json().then(function (data) {
-          console.log(data);
           displayCurrentWeather(data, name);
         });
-      } else {
-        console.error("error");
       }
     });
   };
 
-  
+
   var displayCurrentWeather = function (data, cityName) {
     var currentCity = document.querySelector("#current-city");
     var currentWeather = $("#current-weather");
@@ -52,7 +49,6 @@ function handleSearch(event) {
       .addClass("card-text")
       .text("Humidity: " + data.main.humidity);
     currentWeather.append(tempEl, windEl, humidityEl);
-    // currentCity.append(icon)
     getForecast(data.coord.lat, data.coord.lon);
   };
 
@@ -66,14 +62,11 @@ function handleSearch(event) {
     fetch(geoUrl).then(function (response) {
       if (response.ok) {
         response.json().then(function (data) {
-          console.log(data);
           var lat = data[0].lat;
           var lon = data[0].lon;
           var name = data[0].name;
           getCurrentWeather(lat, lon, name);
         });
-      } else {
-        console.error("error");
       }
     });
   };
@@ -93,29 +86,20 @@ function handleSearch(event) {
           var forecastArray = [];
           console.log(data);
           for (var i = 0; i < data.list.length; i++) {
-            console.log(data.list[i]);
             var forecastTime = data.list[i].dt_txt.split(" ").pop();
-            console.log(forecastTime);
             if (forecastTime === "12:00:00") {
               forecastArray.push(data.list[i]);
             }
           }
           console.log(forecastArray);
         });
-      } else {
-        console.error("error");
       }
     });
   };
-  // API call for 5 day forcast
-  //   var lat =
-  //   var lon =
-  //   var getFiveDayUrl =
-  //     "api.openweathermap.org/data/2.5/forecast?lat=" +
-  //     lat +
-  //     "&lon=" +
-  //     lon +
-  //     "&appid=cc11ae7480c164c7b800ffa97b091fd9";
+
+  var displayForecast = function() {
+
+  }
 }
 // click event for search button
-searchBtn.addEventListener("click", handleSearch);
+searchBtn.click(handleSearch);
