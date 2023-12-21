@@ -60,7 +60,7 @@
   height: 30px;
   font-size: 20px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: var(--white);
   border: 1px solid;
 }
@@ -79,5 +79,10 @@
 .results-card {
   display: flex;
   flex-direction: column;
+}
+
+#current-search {
+
+
 }
 
