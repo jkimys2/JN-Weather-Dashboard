@@ -21,6 +21,7 @@ function handleSearch(event) {
       if (response.ok) {
         response.json().then(function (data) {
           displayCurrentWeather(data, name);
+          console.log(data)
         });
       }
     });
@@ -91,7 +92,7 @@ function handleSearch(event) {
               displayForecast(data.list[i]);
             }
           }
-          console.log(forecastArray);
+          // console.log(forecastArray);
         });
       }
     });
@@ -100,7 +101,8 @@ function handleSearch(event) {
   var displayForecast = function () {
     var fiveDayCard = $("#five-day-card");
     var fiveDayText = $("#five-day-text");
-    fiveDayText.text("5 Day Forecast");
+    fiveDayText.text("5 Day Forecast:");
+
   };
   var saveSearch = function (city) {
     console.log(city);
