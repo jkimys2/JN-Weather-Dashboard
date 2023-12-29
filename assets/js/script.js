@@ -40,7 +40,7 @@ function handleSearch(event) {
     currentCity.append(icon);
     var date = dayjs().format("MM/DD/YYYY")
     var dateEl = $("<h3>").addClass("card-text").text("Date: " + date);
-    // dateEl = moment.unix(currentCityDate).format("MM/DD/YYYY")
+ 
     var tempEl = $("<h3>")
       .addClass("card-text")
       .text("Temp: " + data.main.temp + " °F");
