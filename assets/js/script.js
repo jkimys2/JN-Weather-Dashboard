@@ -9,7 +9,7 @@ function handleSearch(event) {
 
   // call from localstorage and append to #prev-search
 
-  // API call for city & save to localstorage
+  // API call for city 
   var getCurrentWeather = function (lat, lon, name) {
     var getWeatherUrl =
       "https://api.openweathermap.org/data/2.5/weather?lat=" +
@@ -26,6 +26,7 @@ function handleSearch(event) {
     });
   };
 
+  // function to display weather at the top of page
   var displayCurrentWeather = function (data, cityName) {
     var currentCity = document.querySelector("#current-city");
     var currentWeather = $("#current-weather");
@@ -51,6 +52,7 @@ function handleSearch(event) {
     saveSearch(cityName);
   };
 
+  // function to get the lat/lon for 5 day forecast
   var getLatLon = function () {
     var cityInputVal = document.querySelector("#city-input").value;
     var geoUrl =
@@ -70,6 +72,7 @@ function handleSearch(event) {
   };
   getLatLon();
 
+  // function to get 5 day forecast
   var getForecast = function (lat, lon) {
     var getWeatherUrl =
       "https://api.openweathermap.org/data/2.5/forecast?lat=" +
@@ -92,6 +95,8 @@ function handleSearch(event) {
       }
     });
   };
+
+  // function to display 5-day forecast on page
   var displayForecast = function (data) {
     var fiveDayCard = $("#five-day-card");
     var fiveDayText = $("#five-day-text");
@@ -126,6 +131,8 @@ function handleSearch(event) {
       fiveDayCard.append(dataCard);
     }
   };
+
+  // function to save search
   var saveSearch = function (city) {
     localStorage.setItem("city", city);
   };
