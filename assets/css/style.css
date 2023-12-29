@@ -73,8 +73,8 @@
     rgb(0, 123, 255),
     rgb(221, 0, 255)
   );
-  color: white;
-  border: 2px dotted white;
+  color: var(--white);
+  border: 2px dotted var(--white);
 }
 
 .results-card {
@@ -88,8 +88,22 @@
   padding-left: 10px;
 }
 
+#five-day-card {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 .data-card {
-  background-color: rgb(0, 123, 255);
+
+  border: 1px solid black;
+  margin: 2px 5px;
+  padding: 12px;
   font-family: var(--font);
-  
+ background-color: rgb(0, 123, 255);
+ color: var(--white);
+
+}
+
+#five-day-text {
+  margin: 20px;
 }

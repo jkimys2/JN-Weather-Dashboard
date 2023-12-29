@@ -42,13 +42,13 @@ function handleSearch(event) {
     currentCity.append(icon);
     var tempEl = $("<h3>")
       .addClass("card-text")
-      .text("Temp: " + data.main.temp + "°F");
+      .text("Temp: " + data.main.temp + " °F");
     var windEl = $("<h3>")
       .addClass("card-text")
-      .text("Wind Speed: " + data.wind.speed);
+      .text("Wind Speed: " + data.wind.speed + " MPH");
     var humidityEl = $("<h3>")
       .addClass("card-text")
-      .text("Humidity: " + data.main.humidity);
+      .text("Humidity: " + data.main.humidity + " %");
     currentWeather.append(tempEl, windEl, humidityEl);
     getForecast(data.coord.lat, data.coord.lon);
     saveSearch(cityName);
@@ -104,18 +104,18 @@ function handleSearch(event) {
     console.log(data);
 
     for (var i = 0; i < data.length; i++) {
-      var date = $("<h4>").text(data[i].dt_txt.split(" ")[0]);
+      var date = $("<h4>").text(data[i].dt_txt.split(" ")[0]).css("background-color", "rgb(0, 123, 255)");
       var icon = document.createElement("img")
-      icon.setAttribute.( "src",
-      "http://openweathermap.org/img/wn/" + data[i].weather[0].icon + "@2x.png");
+      icon.setAttribute("src", "http://openweathermap.org/img/wn/" + data[i].weather[0].icon + "@2x.png");
       date.append(icon);
-      var temp = $("<h5>").text(data[i].main.temp + "°F");
-      var wind = $("<h5>").text(data[i].wind.speed);
-      var humidity = $("<h5>").text(data[i].main.humidity);
+      var temp = $("<h5>").text(data[i].main.temp + " °F").css("background-color", "rgb(0, 123, 255)");
+      var wind = $("<h5>").text(data[i].wind.speed + " MPH").css("background-color", "rgb(0, 123, 255)");
+      var humidity = $("<h5>").text(data[i].main.humidity + " %").css("background-color", "rgb(0, 123, 255)");
       console.log(date, icon, temp, wind, humidity);
 
-      var dataCard = $("<span>").addClass("data-card");
-      dataCard.
+      var dataCard = $("<div>").addClass("data-card");
+      dataCard.append(date, temp, wind, humidity);
+      fiveDayCard.append(dataCard);
     }
   };
   var saveSearch = function (city) {
