@@ -21,7 +21,6 @@ function handleSearch(event) {
       if (response.ok) {
         response.json().then(function (data) {
           displayCurrentWeather(data, name);
-          console.log(data);
         });
       }
     });
@@ -31,14 +30,12 @@ function handleSearch(event) {
     var currentCity = document.querySelector("#current-city");
     var currentWeather = $("#current-weather");
     currentWeather.empty();
-    console.log(data);
     currentCity.textContent = cityName + ", " + data.name;
     var icon = document.createElement("img");
     icon.setAttribute(
       "src",
       "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"
     );
-    console.log(data);
     currentCity.append(icon);
     var tempEl = $("<h3>")
       .addClass("card-text")
@@ -84,14 +81,12 @@ function handleSearch(event) {
       if (response.ok) {
         response.json().then(function (data) {
           var forecastArray = [];
-          console.log(data);
           for (var i = 0; i < data.list.length; i++) {
             var forecastTime = data.list[i].dt_txt.split(" ").pop();
             if (forecastTime === "12:00:00") {
               forecastArray.push(data.list[i]);
             }
           }
-          console.log(forecastArray);
           displayForecast(forecastArray);
         });
       }
@@ -101,26 +96,38 @@ function handleSearch(event) {
     var fiveDayCard = $("#five-day-card");
     var fiveDayText = $("#five-day-text");
     fiveDayText.text("5 Day Forecast:");
-    console.log(data);
 
     for (var i = 0; i < data.length; i++) {
-      var date = $("<h4>").text(data[i].dt_txt.split(" ")[0]).css("background-color", "rgb(0, 123, 255)");
-      var icon = document.createElement("img")
-      icon.setAttribute("src", "http://openweathermap.org/img/wn/" + data[i].weather[0].icon + "@2x.png");
-      date.append(icon);
-      var temp = $("<h5>").text(data[i].main.temp + " °F").css("background-color", "rgb(0, 123, 255)");
-      var wind = $("<h5>").text(data[i].wind.speed + " MPH").css("background-color", "rgb(0, 123, 255)");
-      var humidity = $("<h5>").text(data[i].main.humidity + " %").css("background-color", "rgb(0, 123, 255)");
-      console.log(date, icon, temp, wind, humidity);
-
+      var date = $("<h4>")
+        .text(data[i].dt_txt.split(" ")[0])
+        .addClass("forecast-background");
+      var icon = document.createElement("img");
+      icon
+        .setAttribute(
+          "src",
+          "http://openweathermap.org/img/wn/" +
+            data[i].weather[0].icon +
+            "@2x.png"
+        );
+      icon.style.backgroundColor = "rgb(0, 123, 255)";
+        date.append(icon)
+      date.addClass("forecast-background");
+      var temp = $("<h5>")
+        .text(data[i].main.temp + " °F")
+        .addClass("forecast-background");
+      var wind = $("<h5>")
+        .text(data[i].wind.speed + " MPH")
+        .addClass("forecast-background");
+      var humidity = $("<h5>")
+        .text(data[i].main.humidity + " %")
+        .addClass("forecast-background");
       var dataCard = $("<div>").addClass("data-card");
       dataCard.append(date, temp, wind, humidity);
       fiveDayCard.append(dataCard);
     }
   };
   var saveSearch = function (city) {
-    console.log(city);
-    localStorage.setItem("City", city);
+    localStorage.setItem("city", city);
   };
 }
 // click event for search button
