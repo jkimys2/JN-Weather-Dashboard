@@ -88,3 +88,8 @@
   padding-left: 10px;
 }
 
+.data-card {
+  background-color: rgb(0, 123, 255);
+  font-family: var(--font);
+  
+}
