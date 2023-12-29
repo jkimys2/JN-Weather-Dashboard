@@ -2,7 +2,7 @@ var searchBtn = $("#search-btn");
 var searchCard = $(".search-card");
 var resultsCard = $(".results-card");
 var currentSearchCard = $("#current-search");
-var savedSearches = JSON.parse(localStorage.getItem("city")) || [];
+
 // function for search button
 function handleSearch(event) {
   event.preventDefault();
@@ -38,6 +38,9 @@ function handleSearch(event) {
       "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"
     );
     currentCity.append(icon);
+    var date = dayjs().format("MM/DD/YYYY")
+    var dateEl = $("<h3>").addClass("card-text").text("Date: " + date);
+    // dateEl = moment.unix(currentCityDate).format("MM/DD/YYYY")
     var tempEl = $("<h3>")
       .addClass("card-text")
       .text("Temp: " + data.main.temp + " °F");
@@ -47,7 +50,7 @@ function handleSearch(event) {
     var humidityEl = $("<h3>")
       .addClass("card-text")
       .text("Humidity: " + data.main.humidity + " %");
-    currentWeather.append(tempEl, windEl, humidityEl);
+    currentWeather.append(dateEl, tempEl, windEl, humidityEl);
     getForecast(data.coord.lat, data.coord.lon);
     saveSearch(cityName);
   };
@@ -106,7 +109,7 @@ function handleSearch(event) {
       var date = $("<h4>")
         .text(data[i].dt_txt.split(" ")[0])
         .addClass("forecast-background");
-      var icon = document.createElement("img");
+        var icon = document.createElement("img");
       icon
         .setAttribute(
           "src",
