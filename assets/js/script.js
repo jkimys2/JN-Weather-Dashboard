@@ -7,8 +7,7 @@ var cityArray = JSON.parse(localStorage.getItem("city-list")) || [];
 // function for search button
 function handleSearch(city) {
   getLatLon(city);
-}
-// call from localstorage and append to #prev-search
+};
 
 // API call for city
 var getCurrentWeather = function (lat, lon, name) {
