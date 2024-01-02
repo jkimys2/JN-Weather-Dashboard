@@ -65,9 +65,11 @@
   border: 1px solid;
   margin: 2px;
 }
+
 #prev-search {
   margin-top: 2em;
-};
+}
+
 .prev-search-btn {
   background-image: linear-gradient(
     to right,

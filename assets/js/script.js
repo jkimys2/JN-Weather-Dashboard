@@ -107,9 +107,10 @@ var displayForecast = function (data) {
   fiveDayCard.empty();
   var fiveDayText = $("#five-day-text");
   fiveDayText.text("5 Day Forecast:");
-console.log(data)
+  console.log(data);
   for (var i = 0; i < data.length; i++) {
-    var date = $("<h4>").addClass("forecast-background");
+    var timestamp = dayjs.unix(data[i].dt).format("ddd MM/DD");
+    var date = $("<h4>").text(timestamp).addClass("forecast-background");
     var icon = document.createElement("img");
     icon.setAttribute(
       "src",
@@ -117,7 +118,6 @@ console.log(data)
     );
     icon.style.backgroundColor = "rgb(0, 123, 255)";
     date.append(icon);
-    date.addClass("forecast-background");
     var temp = $("<h5>")
       .text(data[i].main.temp + " °F")
       .addClass("forecast-background");
@@ -142,6 +142,7 @@ var saveSearch = function (city) {
   loadMenu(cityArray);
 };
 
+// function for previous search buttons
 var loadMenu = function (cityArray) {
   $("#prev-search").empty();
   for (i = 0; i < cityArray.length; i++) {
@@ -154,10 +155,10 @@ var loadMenu = function (cityArray) {
     $("#prev-search").append(button);
   }
 };
+
 // click event for search button
 searchBtn.click(function (event) {
   event.preventDefault();
   var cityInputVal = document.querySelector("#city-input").value;
   handleSearch(cityInputVal);
 });
-// loadMenu()
