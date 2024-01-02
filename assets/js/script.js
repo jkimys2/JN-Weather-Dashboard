@@ -38,7 +38,7 @@ var displayCurrentWeather = function (data, cityName) {
     "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"
   );
   currentCity.append(icon);
-  var date = dayjs().format("MM/DD/YYYY");
+  var date = dayjs().format("dddd, MM/DD/YYYY");
   var dateEl = $("<h3>")
     .addClass("card-text")
     .text("Date: " + date);
@@ -108,7 +108,7 @@ var displayForecast = function (data) {
   fiveDayText.text("5 Day Forecast:");
   console.log(data);
   for (var i = 0; i < data.length; i++) {
-    var timestamp = dayjs.unix(data[i].dt).format("ddd MM/DD");
+    var timestamp = dayjs.unix(data[i].dt).format("ddd, MM/DD");
     var date = $("<h4>").text(timestamp).addClass("forecast-background");
     var icon = document.createElement("img");
     icon.setAttribute(
