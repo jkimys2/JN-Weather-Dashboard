@@ -35,7 +35,7 @@ var displayCurrentWeather = function (data, cityName) {
   var icon = document.createElement("img");
   icon.setAttribute(
     "src",
-    "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"
+    "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"
   );
   currentCity.append(icon);
   var date = dayjs().format("dddd, MM/DD/YYYY");
@@ -61,7 +61,7 @@ var displayCurrentWeather = function (data, cityName) {
 var getLatLon = function (city) {
   console.log(city);
   var geoUrl =
-    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
     city +
     "&limit=5&appid=cc11ae7480c164c7b800ffa97b091fd9";
   fetch(geoUrl).then(function (response) {
@@ -113,7 +113,7 @@ var displayForecast = function (data) {
     var icon = document.createElement("img");
     icon.setAttribute(
       "src",
-      "http://openweathermap.org/img/wn/" + data[i].weather[0].icon + "@2x.png"
+      "https://openweathermap.org/img/wn/" + data[i].weather[0].icon + "@2x.png"
     );
     icon.style.backgroundColor = "rgb(0, 123, 255)";
     date.append(icon);
