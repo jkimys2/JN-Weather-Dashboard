@@ -63,8 +63,18 @@
   justify-content: flex-start;
   background-color: var(--white);
   border: 1px solid;
+  margin: 2px;
 }
-
+#prev-search {
+  margin-top: 2em;
+};
+.prev-search-btn {
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 123, 255),
+    rgb(221, 0, 255)
+  );
+}
 .search-card button:hover {
   cursor: pointer;
   background-image: linear-gradient(
