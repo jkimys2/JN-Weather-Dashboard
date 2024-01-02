@@ -59,7 +59,6 @@ var displayCurrentWeather = function (data, cityName) {
 
 // function to get the lat/lon for 5 day forecast
 var getLatLon = function (city) {
-  console.log(city);
   var geoUrl =
     "https://api.openweathermap.org/geo/1.0/direct?q=" +
     city +
@@ -106,7 +105,6 @@ var displayForecast = function (data) {
   fiveDayCard.empty();
   var fiveDayText = $("#five-day-text");
   fiveDayText.text("5 Day Forecast:");
-  console.log(data);
   for (var i = 0; i < data.length; i++) {
     var timestamp = dayjs.unix(data[i].dt).format("ddd, MM/DD");
     var date = $("<h4>").text(timestamp).addClass("forecast-background");
