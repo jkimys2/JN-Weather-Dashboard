@@ -145,7 +145,7 @@ var saveSearch = function (city) {
 var loadMenu = function (cityArray) {
   $("#prev-search").empty();
   for (i = 0; i < cityArray.length; i++) {
-    var button = $("<button>").text(cityArray[i]).addClass("prev-search-btn");
+    var button = $("<button>").text(cityArray[i]);
     button.attr("value", cityArray[i]);
     button.click(function (event) {
       event.preventDefault();
