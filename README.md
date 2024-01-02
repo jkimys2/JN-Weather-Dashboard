@@ -26,12 +26,20 @@ There was no starter code provided for this challenge. The HTML, CSS, and JavaSc
 ![Final Screenshot](./assets/images/screenshot.png)
 
 
+## Technologies Used
+
+Bootstrap <br>
+jQuery <br>
+Day.js
+
+
 ## Credits
 
 Thank you Corey Yates for always helping out! 😁
+
 
 ## Links
 
 GitHub Repository: https://github.com/jkimys2/JN-Weather-Dashboard
 
-Deployed Application: 
+Deployed Application: https://jkimys2.github.io/JN-Weather-Dashboard/
